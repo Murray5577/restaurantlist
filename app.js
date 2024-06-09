@@ -17,7 +17,10 @@ app.get('/',(req,res)=>{
 })
 
 app.get('/restaurants',(req,res)=>{
-    return Restaurant.findAll()
+    return Restaurant.findAll({
+        attributes: ['id', 'name','createdAt'],
+        raw: true
+    })
         .then((restaurants) => res.send({ restaurants }))
         .catch((err)=>res.status(422).json(err))
 
