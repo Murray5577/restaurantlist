@@ -22,27 +22,40 @@
     <div class="row">
         <div class="col-md-10 col-12 mx-auto">
             <div class="row row-cols-sm-3">
-                {{#each restaurantDatas as |restaurantData|}}
-                <a href="/restaurants/{{restaurantData.id}}" class="text-secondary">
+                <!-- restaurantDatas as |restaurantData|-->
+                {{#each restaurantdatas }}
+                <div class="text-secondary">
                     <div class="card mb-3">
                         <img class="card-img-top"
-                            src="{{restaurantData.image}}"
+                            src="{{this.image}}"
                             alt="Sababa 沙巴巴中東美食">
                         <div class="card-body p-3">
-                            <h6 class="card-title mb-1">{{restaurantData.name}}</h6>
+                            <h6 class="card-title mb-1">{{this.name}}</h6>
 
                             <div class="restaurant-category mb-1">
-                                <i class="fas fa-utensils pr-2"></i> {{restaurantData.category}}
+                                <i class="fas fa-utensils pr-2"></i> {{this.category}}
                             </div>
 
                             <span class="badge rounded-pill bg-danger font-weight-normal">
-                                {{restaurantData.rating}}
+                                {{this.rating}}
                                 <i class="fas fa-star fa-xs"></i>
                             </span>
 
                         </div>
+
+                        <div>
+                            <a href="/restaurants/{{this.id}}">Detail</a>
+                            <a href="/restaurants/{{this.id}}/edit" style="margin-right: 3px;">Edit</a>
+                            <form action="/restaurants/{{this.id}}/?_method=DELETE" method="POST" style="display: inline;">
+                                <button type="submit" class="btn btn-danger">delete</button>
+                            </form>
+                        </div>
+
                     </div>
-                </a>
+                </div>
+
+                
+
                 {{/each}}
             </div>
         </div>
