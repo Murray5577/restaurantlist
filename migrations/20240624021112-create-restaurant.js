@@ -10,40 +10,40 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       name: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      name_en:{
-        allowNull: false,
-        type: Sequelize.STRING
+      name_en: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       category: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       image: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       location: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       phone: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       google_map: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       rating: {
-        allowNull: false,
-        type: Sequelize.DECIMAL(2, 1)
+        type: Sequelize.FLOAT.UNSIGNED,
+        allowNull: false
       },
       description: {
-        allowNull: false,
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,

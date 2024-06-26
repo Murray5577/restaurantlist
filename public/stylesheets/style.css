@@ -73,3 +73,12 @@ header {
         font-size: 2rem;
     }
 }
+
+.card img{
+    object-fit:cover;
+    height: 225px;
+}
+
+.margin-bottom{
+    margin-bottom: 100px;
+}
