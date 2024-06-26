@@ -5,7 +5,7 @@ const initialData = require('../public/jsons/restaurant.json').results
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up (queryInterface, Sequelize) {
-    let seedData = initialData.map((data)=>({
+    let seedData = initialData.map((data) => ({
       name: data.name,
       name_en: data.name_en,
       category: data.category,

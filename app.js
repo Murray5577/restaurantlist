@@ -24,10 +24,10 @@ app.get('/',(req,res)=>{
 app.get('/restaurants',async(req,res)=>{
     try{
         const restaurantdatas = await Restaurant.findAll({
-            attributes: ['id', 'image', 'name', 'category', 'rating'],
+            attributes: ['id','image', 'name', 'category','rating','description'],
             raw: true
         })
-
+        
         const keyword = req.query.search?.trim()
         const matchedRestaurants = keyword ? restaurantdatas.filter((r) => Object.values(r).some((property) => {
             if (typeof property === 'string') {
@@ -130,5 +130,5 @@ app.delete('/restaurants/:id',(req,res)=>{
 })
 
 app.listen(port,()=>{
-    console.log(`123456`)
+    console.log(`Express server is running on http://localhost:3000`)
 })

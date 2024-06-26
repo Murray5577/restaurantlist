@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     location: DataTypes.STRING,
     phone: DataTypes.STRING,
     google_map: DataTypes.STRING,
-    rating: DataTypes.NUMBER,
+    rating: DataTypes.FLOAT.UNSIGNED,
     description: DataTypes.STRING
   }, {
     sequelize,
