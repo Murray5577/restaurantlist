@@ -1,3 +1,4 @@
+{{>message}}
 <h1 class="mb-1 restaurant-show-title">編輯餐廳</h1>
 <div class="container">
     <form action="/restaurants/{{restaurant.id}}?_method=PUT" method="POST">
@@ -72,7 +73,12 @@
             </div>
         </div>
 
-        <button type="submit" class="btn btn-success mb-5">修改</button>
+        <div class="d-flex justify-content-end">
+            <button type="submit" class="btn btn-success mb-5">
+                <i class="fa-solid fa-pen-to-square" style="margin-right: 10px;"></i>修改
+            </button>
+        </div>
+        
 
     </form>
 </div>

@@ -1,18 +1,38 @@
 <!-- search bar -->
 <div class="container search-bar">
     <div class="search-bar-outer">
-        <div class="search-bar-inner">
-            <form action="/restaurants">
-                <h4 class="mb-2">尋找餐廳：</h4>
-                <div class="input-group">
-                    <input type="text" name="search" class="form-control" placeholder="輸入餐廳、分類"
-                        aria-label="Restaurant Name..." value="" aria-describedby="search-button">
-                    <div class="input-group-append">
-                        <button class="btn btn-major" type="submit" id="search-button"><i
-                                class="fas fa-search"></i></button>
+        {{>message}}
+        <div class="search-bar-inner grid">
+            <h4 class="mb-2">尋找餐廳：</h4>
+                <form action="/restaurants">               
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <div class="input-group">
+                                <input type="text" name="search" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..." value="{{keyword}}"
+                                    aria-describedby="search-button">
+                                <div class="input-group-append">
+                                    <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-sm-4">
+                            <select name="sort" class="form-select" aria-label="Default select example">
+                                <option selected disabled>
+                                    排序方式
+                                </option>
+                                <option value="none"{{#if (equal sort 'none')}}selected{{/if}}>無</option>
+                                <option value="asc" {{#if (equal sort 'asc')}}selected{{/if}}>A-Z</option>
+                                <option value="desc" {{#if (equal sort 'desc')}}selected{{/if}}>Z-A</option>
+                                <option value="category" {{#if (equal sort 'category')}}selected{{/if}}>類別</option>
+                                <option value="location" {{#if (equal sort 'location')}}selected{{/if}}>地區</option>
+                                <option value="ratingASC" {{#if (equal sort 'ratingASC')}}selected{{/if}}>評分低-高</option>
+                                <option value="ratingDESC" {{#if (equal sort 'ratingDESC')}}selected{{/if}}>評分高-低</option>
+                            </select>
+                            
+                        </div>
                     </div>
-                </div>
-            </form>
+                </form>
         </div>
     </div>
 </div>
@@ -61,3 +81,19 @@
         </div>
     </div>
 </div>
+
+<!-- 分頁 -->
+
+<nav>
+    <ul class="d-flex justify-content-center">
+        <form action="/restaurants" method="GET" style="display: inline;">
+            <input type="hidden" name="page" value="{{prev}}">
+            <button type="submit" class="btn btn-primary">prev</button>
+        </form>
+        <span style="margin: auto 10px;">page: {{page}} / {{maxPage}}</span>
+        <form action="/restaurants" method="GET" style="display: inline;">
+            <input type="hidden" name="page" value="{{next}}">
+            <button type="submit" class="btn btn-primary">next</button>
+        </form>
+    </ul>
+</nav>
