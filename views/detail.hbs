@@ -1,4 +1,3 @@
-
 <h1 class="mb-1 restaurant-show-title">{{restaurant.name}}</h1>
 <div class="container mb-5">
     <div class="row">
@@ -35,17 +34,16 @@
                 {{restaurant.description}}
             </p>
 
-            <img class="rounded mx-auto d-block mb-4 w-100"
-                src="{{restaurant.image}}" alt="{{restaurant.name}}"
+            <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}"
                 style="max-width: 600px;">
-            
+
             <div class="d-flex justify-content-end">
                 <a href="/restaurants/{{restaurant.id}}/edit" style="margin: auto 10px;">edit</a>
                 <form action="/restaurants/{{restaurant.id}}/?_method=DELETE" method="POST" style="display: inline;">
                     <button type="submit" class="btn btn-danger">delete</button>
                 </form>
             </div>
-            
+
         </div>
     </div>
 </div>

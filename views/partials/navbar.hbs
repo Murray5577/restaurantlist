@@ -1,0 +1,14 @@
+{{#if user_name}}
+
+<span class="navbar-brand" style="color: #707070;">使用者：{{user_name}}</span>
+<div style="float: right">
+    <form action="/logout" method="POST">
+        <button type="submit" class="btn btn-outline-secondary">Logout</button>
+    </form>
+</div>
+
+{{else}}
+<a href="/login"><button class="btn btn-success">登入</button></a>
+<a href="/register"><button class="btn btn-primary ms-2">註冊新帳號</button></a>
+
+{{/if}}

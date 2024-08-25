@@ -1,0 +1,38 @@
+<div class="container">
+    <h1 class="mb-1 restaurant-show-title">餐廳記憶網</h1>
+    <div class="card">
+        <form action="/register" method="post">
+            <div class="card-header">
+                註冊
+            </div>
+            <div class="card-body row g-3">
+                <div class="col-12">
+                    <label for="email" class="form-label">Email</label>
+                    <input name="email" type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-12">
+                    <label for="name" class="form-label">姓名</label>
+                    <input name="name" type="name" class="form-control" id="name" placeholder="請輸入姓名">
+                </div>
+                <div class="col-12">
+                    <label for="password" class="form-label">密碼</label>
+                    <input name="password" type="password" class="form-control" id="inputPassword4" required>
+                </div>
+                <div class="col-12">
+                    <label for="confirmPassword" class="form-label">確認密碼</label>
+                    <input name="confirmPassword" type="password" class="form-control" id="inputPassword4" required>
+                </div>
+            </div>
+            <div class="card-footer text-muted d-flex justify-content-end">
+                <div style="text-align:center; line-height: 50px">已有帳號!<a href="/login">登入</a> </div>
+                <button type="submit" class="btn btn-success ms-3">確認</button>
+        </form>
+        <form action="/login/facebook" method="GET">
+            <button type="submit" class="btn btn-primary ms-3" style="text-align:center" id="btn-fb">用 Facebook
+                登入</button>
+        </form>
+    </div>
+
+</div>
+<div class="mb-5"></div>
+</div>
