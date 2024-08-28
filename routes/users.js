@@ -4,7 +4,7 @@ const router = express.Router()
 const bcrypt = require('bcryptjs')
 
 const db = require('../models')
-const User = db.user
+const User = db.User
 
 router.post('/', (req, res, next) => {
     const { email, name, password, confirmPassword } = req.body
